@@ -26,22 +26,54 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
-                <li class="nav-item">
-                    <a href="{{ route('admin.pasar.index') }}" class="nav-link">
+                @php
+                    Request::segment(2) === 'pasar' || Request::segment(2) === 'komoditi' || Request::segment(2) === 'gambar-pasar' ? $pasar = true : $pasar = false
+                @endphp
+                <li class="nav-item has-treeview {{ $pasar ? 'menu-open' : '' }} ">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-shopping-bag"></i>
                         <p>
                             Pasar
+                            <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
+                    <ul class="nav nav-treeview ">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.pasar.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-list"></i>
+                                <p>
+                                    Data Pasar
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>
+                                    Data Padagang
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.komoditi.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>
+                                    Komoditi
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('admin.gambar-pasar.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-image"></i>
+                                <p>
+                                    Gambar Pasar
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="{{ route('admin.komoditi.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-book"></i>
-                        <p>
-                            Komoditi
-                        </p>
-                    </a>
-                </li>
+
+                <li class="nav-header">Lainnya</li>
                 @if(Auth::user()->role == 'admin')
                     @php
                         Request::segment(2) === 'ikm' || Request::segment(2) === 'ukm' ? $open = true : $open = false

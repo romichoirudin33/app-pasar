@@ -25,6 +25,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::group(['prefix' => 'admin'], function () {
         Route::get('/', 'HomeController@index')->name('home');
         Route::resource('pasar', 'Admin\PasarController', ['as' => 'admin']);
+        Route::resource('gambar-pasar', 'Admin\GambarPasarController', ['as' => 'admin']);
+
         Route::resource('komoditi', 'Admin\KomoditiController', ['as' => 'admin']);
         Route::resource('ikm', 'Admin\IkmController', ['as' => 'admin']);
         Route::resource('ukm', 'Admin\UkmController', ['as' => 'admin']);

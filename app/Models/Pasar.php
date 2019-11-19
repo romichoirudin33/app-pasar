@@ -34,4 +34,9 @@ class Pasar extends Model
     {
         return $this->hasOne(Survei::class, 'pasar_id');
     }
+
+    public function gambar_pasar()
+    {
+        return $this->hasMany(GambarPasar::class, 'pasar_id');
+    }
 }
