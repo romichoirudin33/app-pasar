@@ -13,11 +13,29 @@
             <div class="card">
                 <div class="card-body">
                     <div class="card-text">
-                        <b>Total Record {{ count($data) }}</b>
-                        <div class="float-right">
-                            <a href="{{ route('admin.saran.create') }}" class="btn btn-outline-primary btn-xs">
-                                <span class="fas fa-plus"></span> Tambah
-                            </a>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <form>
+                                    <label for="pasar_id">Nama Pasar</label>
+                                    <select name="pasar_id" id="pasar_id" class="form-control" onchange="this.form.submit()">
+                                        @if($detail_pasar == '')
+                                            <option value="">Pilih</option>
+                                        @else
+                                            <option value="{{ $detail_pasar->id }}">{{ $detail_pasar->nama }}</option>
+                                        @endif
+                                        @foreach($pasar as $p)
+                                            <option value="{{ $p->id }}">{{ $p->nama }}</option>
+                                        @endforeach
+                                    </select>
+                                </form>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="float-right">
+                                    <a href="{{ route('admin.saran.create') }}" class="btn btn-outline-primary btn-xs">
+                                        <span class="fas fa-plus"></span> Tambah
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -33,6 +51,9 @@
                                      alt="user image">
                                 <span class="username">
                                     <a href="#">{{ $i->nama }}</a>
+                                    <label class="label label-primary">
+                                        Di Pasar {{ $i->pasar->nama }}
+                                    </label>
                                     <a href="{{ route('admin.saran.edit', ['id' => $i->id]) }}" class="float-right btn-tool">
                                         <i class="fas fa-edit"></i>
                                     </a>

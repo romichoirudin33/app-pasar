@@ -28,6 +28,15 @@
                     {{ csrf_field() }}
                     <div class="card-body">
                         <div class="form-group">
+                            <label>Nama Pasar</label>
+                            <select name="pasar_id" id="pasar_id" class="form-control">
+                                <option value="">Pilih</option>
+                                @foreach($pasar as $p)
+                                    <option value="{{ $p->id }}">{{ $p->nama }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label>Nama Kegiatan</label>
                             <input type="text" autocomplete="off" class="form-control" name="kegiatan" data-validetta="required">
                         </div>

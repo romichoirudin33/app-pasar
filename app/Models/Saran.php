@@ -11,8 +11,13 @@ class Saran extends Model
         'saran',
         'ket',
         'status',
+        'pasar_id',
     ];
 
     protected $table = 'saran';
 
+    public function pasar()
+    {
+        return $this->belongsTo(Pasar::class, 'pasar_id');
+    }
 }
