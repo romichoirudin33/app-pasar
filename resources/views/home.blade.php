@@ -1,23 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
-
-                <div class="panel-body">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title mb-2">Dashboard</h5>
+                    <div class="card-text">
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                    Selamat datang di aplikasi komoditi pasar
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection

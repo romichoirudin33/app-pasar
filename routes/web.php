@@ -17,4 +17,21 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::match(['get', 'post'], 'register', function () {
+    return redirect('/');
+});
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::group(['prefix' => 'admin'], function () {
+        Route::get('/', 'HomeController@index')->name('home');
+        Route::resource('pasar', 'Admin\PasarController', ['as' => 'admin']);
+        Route::resource('komoditi', 'Admin\KomoditiController', ['as' => 'admin']);
+        Route::resource('ikm', 'Admin\IkmController', ['as' => 'admin']);
+        Route::resource('ukm', 'Admin\UkmController', ['as' => 'admin']);
+        Route::resource('rapat', 'Admin\RapatController', ['as' => 'admin']);
+        Route::resource('saran', 'Admin\SaranController', ['as' => 'admin']);
+
+        Route::resource('users', 'Admin\UsersController', ['as' => 'admin']);
+    });
+});
+
