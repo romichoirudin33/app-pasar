@@ -8,7 +8,7 @@
     </div>
 
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 col-sm-6 col-xs-6">
             <div class="card mb-4" style="height: 250px">
                 <div class="card-body text-center">
                     <img src="https://www.jing.fm/clipimg/full/143-1430726_fruits-pasartap-add-to-market-icon-png.png"
@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 col-sm-6 col-xs-6">
             <div class="card mb-4" style="height: 250px">
                 <div class="card-body text-center">
                     <img src="https://www.pngfind.com/pngs/b/561-5612335_nutrition-and-dietetics-meeting-round-icon-png-transparent.png"
@@ -47,7 +47,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 col-sm-6 col-xs-6">
             <div class="card mb-4" style="height: 250px">
                 <div class="card-body text-center">
                     <img src="https://www.ukmriau.com/wp-content/uploads/2018/03/icon-kategori-ukm.png"

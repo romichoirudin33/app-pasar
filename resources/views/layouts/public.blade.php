@@ -45,7 +45,7 @@
         </h1>
     </a>
 
-    <p class="ml-5 text-white text-light">
+    <p class="ml-5 text-white text-light h6">
         Website Resmi Pemerintah Kabupaten Bima
         <br>
         Transparansi, Akuntable dan Partisipatif

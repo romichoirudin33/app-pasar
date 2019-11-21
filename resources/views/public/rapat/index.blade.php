@@ -26,14 +26,14 @@
         <div class="row">
             <div class="col-md-12">
                 @foreach($data as $i)
-                    <div class="card">
+                    <div class="card shadow mb-2">
                         <div class="card-header">
                             <h5 class="card-title">
                                 Kegiatan <a href="#">{{ $i->kegiatan }}</a> di pasar {{ $i->pasar->nama }}
+                                <div class="float-right" style="font-size: small">
+                                    <i class="far fa-clock"></i> {{ date('d-m-Y', strtotime($i->tanggal_kegiatan)) }}
+                                </div>
                             </h5>
-                            <div class="float-right">
-                                <i class="far fa-clock"></i> {{ date('d-m-Y', strtotime($i->tanggal_kegiatan)) }}
-                            </div>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">

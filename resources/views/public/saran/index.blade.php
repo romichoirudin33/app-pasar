@@ -23,13 +23,13 @@
         <strong>Data saran dan Permasalahan</strong>
     </h6>
     @if(count($data) > 0)
-        <div class="row">
+        <div class="row mb-2">
             <div class="col-md-12">
                 @foreach($data as $i)
-                    <div class="card">
+                    <div class="card shadow mb-2">
                         <div class="card-header">
                             <h5 class="card-title">
-                                <img class="rounded-circle" style="width: 50px" src="{{ asset('css/dist/img/user1-128x128.jpg') }}"
+                                <img class="rounded-circle" style="width: 30px" src="{{ asset('css/dist/img/user1-128x128.jpg') }}"
                                      alt="user image">
                                 <a href="#">{{ $i->nama }}</a>
                                 <label class="label label-primary">
