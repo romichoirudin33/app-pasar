@@ -14,8 +14,18 @@
             border-radius: 0;
             height: 400px;
             background-size: cover;
-            background-image: url('https://scontent-frx5-1.cdninstagram.com/vp/916a23df54eb551521a72a30f7711842/5E4CD5FA/t51.2885-15/e35/69081181_750246332073108_960838464931487512_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=100&se=7&ig_cache_key=MjEyMDkxMDMxMDQzNzAwMTgyNQ%3D%3D.2') ;
+            background-image: url('https://scontent-frx5-1.cdninstagram.com/vp/916a23df54eb551521a72a30f7711842/5E4CD5FA/t51.2885-15/e35/69081181_750246332073108_960838464931487512_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=100&se=7&ig_cache_key=MjEyMDkxMDMxMDQzNzAwMTgyNQ%3D%3D.2');
         }
+
+        .link-app:hover{
+            text-decoration: underline;
+            color: #7abaff;
+        }
+
+        .table-sm{
+            font-size: 14px;
+        }
+
     </style>
     @yield('css')
 </head>
@@ -23,10 +33,20 @@
 <body style="background: #ececec">
 
 <div class="jumbotron">
-    <h1 class="text-bold text-white ml-5 mb-3" style="font-family: 'Montserrat', sans-serif;">Sigesit Bima</h1>
+    <div class="float-right mr-5">
+        <a href="{{ url('admin') }}" class="btn btn-outline-dark">
+            Admin Page
+        </a>
+    </div>
+
+    <a href="{{ url('/') }}" style="" class="link-app text-bold text-white">
+        <h1 class="ml-5 mb-3" style="font-family: 'Montserrat', sans-serif;">
+            Sigesit Bima
+        </h1>
+    </a>
 
     <p class="ml-5 text-white text-light">
-        Website Resmi Pemerintah Bima
+        Website Resmi Pemerintah Kabupaten Bima
         <br>
         Transparansi, Akuntable dan Partisipatif
     </p>

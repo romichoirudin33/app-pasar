@@ -11,9 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['prefix' => '/'], function () {
+    Route::get('/', 'PublicController@index');
+    Route::get('pasar', 'PublicController@pasar')->name('pasar');
+    Route::get('pasar/{id}', 'PublicController@pasar_show')->name('pasar_show');
+    Route::get('komoditi', 'PublicController@komoditi')->name('komoditi');
+    Route::get('rapat', 'PublicController@rapat')->name('rapat');
+    Route::get('saran', 'PublicController@saran')->name('saran');
+    Route::get('ikm-ukm', 'PublicController@ikmUkm')->name('ikm-ukm');
 });
+
+
 
 Auth::routes();
 
