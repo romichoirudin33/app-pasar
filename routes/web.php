@@ -13,6 +13,7 @@
 
 Route::group(['prefix' => '/'], function () {
     Route::get('/', 'PublicController@index');
+    Route::get('/dev', 'PublicController@dev');
     Route::get('pasar', 'PublicController@pasar')->name('pasar');
     Route::get('pasar/{id}', 'PublicController@pasar_show')->name('pasar_show');
     Route::get('komoditi', 'PublicController@komoditi')->name('komoditi');
@@ -20,8 +21,6 @@ Route::group(['prefix' => '/'], function () {
     Route::get('saran', 'PublicController@saran')->name('saran');
     Route::get('ikm-ukm', 'PublicController@ikmUkm')->name('ikm-ukm');
 });
-
-
 
 Auth::routes();
 
@@ -34,6 +33,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/', 'HomeController@index')->name('home');
         Route::resource('pasar', 'Admin\PasarController', ['as' => 'admin']);
         Route::resource('gambar-pasar', 'Admin\GambarPasarController', ['as' => 'admin']);
+        Route::resource('bakulan', 'Admin\BakulanController', ['as' => 'admin']);
 
         Route::resource('komoditi', 'Admin\KomoditiController', ['as' => 'admin']);
         Route::resource('ikm', 'Admin\IkmController', ['as' => 'admin']);

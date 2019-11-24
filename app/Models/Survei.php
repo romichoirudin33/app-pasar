@@ -23,10 +23,11 @@ class Survei extends Model
         'jum_bakulan',
         'jum_kios',
         'jum_ruko',
+        'potensi_pad_awal', //potensi pendapatan pasar
         'potensi_pad', //potensi pendapatan pasar
+        'los_pasar',
         'pad_tertagih',
         'selisih_pad',
-        'los_pasar',
         'anggaran',
         'pengelolaan',
         'gambar',

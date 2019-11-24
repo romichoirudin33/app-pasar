@@ -28,7 +28,7 @@ class PasarController extends Controller
         $setoran_bakulan = $request->jum_bakulan * $request->setor_bakulan;
         $setoran_kios = $request->jum_kios * $request->setor_kios;
         $setoran_ruko = $request->jum_ruko * $request->setor_ruko;
-        $potensi_pad = $setoran_bakulan + $setoran_kios + $setoran_ruko + $request->pendapatan_lain;
+        $potensi_pad = $setoran_kios + $setoran_ruko + $request->pendapatan_lain;
         $data = array(
             'nama' => $request->nama,
             'desa' => $request->desa,
@@ -42,7 +42,7 @@ class PasarController extends Controller
             'unit' => $request->unit,
             'buka' => $request->buka,
             'jumlah' => $jumlah,
-            'omset' => $potensi_pad,
+            'omset' => $request->omset,
             'upt' => $request->upt,
             'pengelola' => $request->pengelola
         );
@@ -58,13 +58,12 @@ class PasarController extends Controller
             'insentif_jp' => $request->insentif_jp, //insentif juru pungut
             'kebersihan' => $request->kebersihan,
             'keamanan' => $request->keamanan,
-            'setor_bakulan' => $request->setor_bakulan, //tarif setor bakulan
             'setor_kios' => $request->setor_kios,
             'setor_ruko' => $request->setor_ruko,
             'pendapatan_lain' => $request->pendapatan_lain,
-            'jum_bakulan' => $request->jum_bakulan,
             'jum_kios' => $request->jum_kios,
             'jum_ruko' => $request->jum_ruko,
+            'potensi_pad_awal' => 0,
             'potensi_pad' => $potensi_pad, //potensi pendapatan pasar
             'pad_tertagih' => 0,
             'selisih_pad' => $potensi_pad,
@@ -73,13 +72,41 @@ class PasarController extends Controller
             'pengelolaan' => $request->pengelolaan,
             'pasar_id' => $pasar->id,
         );
-        $survei = Survei::create($data);
+        Survei::create($data);
         Toastr::success('Data berhasil di simpan', 'Success');
         return redirect()->route('admin.pasar.show', ['id' => $pasar->id]);
     }
 
     public function show($id)
     {
+        $data = Pasar::findOrfail($id);
+        if (count($data->survei) == 0){
+            $data = array(
+                'kantor_pasar' => 'Ada',
+                'toilet' => 'Ada',
+                'struktur' => 'Ada',
+                'nama_kp' => '-', //kepala pasar
+                'hp_kp' => '', //kepala pasar
+                'juru_pungut' => 0, //jml juru pungut
+                'insentif_jp' => 0, //insentif juru pungut
+                'kebersihan' => 0,
+                'keamanan' => 0,
+                'setor_kios' => 0,
+                'setor_ruko' => 0,
+                'pendapatan_lain' => 0,
+                'jum_kios' => 0,
+                'jum_ruko' => 0,
+                'potensi_pad_awal' => 0,
+                'potensi_pad' => 0, //potensi pendapatan pasar
+                'pad_tertagih' => 0,
+                'selisih_pad' => 0,
+                'los_pasar' => 0,
+                'anggaran' => 0,
+                'pengelolaan' => '',
+                'pasar_id' => $id,
+            );
+            Survei::create($data);
+        }
         return view('admin.pasar.show')
             ->with('data', Pasar::findOrfail($id));
     }
@@ -96,7 +123,7 @@ class PasarController extends Controller
         $setoran_bakulan = $request->jum_bakulan * $request->setor_bakulan;
         $setoran_kios = $request->jum_kios * $request->setor_kios;
         $setoran_ruko = $request->jum_ruko * $request->setor_ruko;
-        $potensi_pad = $setoran_bakulan + $setoran_kios + $setoran_ruko + $request->pendapatan_lain;
+        $potensi_pad = $setoran_kios + $setoran_ruko + $request->pendapatan_lain;
         $data = array(
             'nama' => $request->nama,
             'desa' => $request->desa,

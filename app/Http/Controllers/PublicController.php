@@ -7,6 +7,7 @@ use App\Models\Komoditi;
 use App\Models\Pasar;
 use App\Models\Rapat;
 use App\Models\Saran;
+use App\Models\Survei;
 use App\Models\Ukm;
 use Illuminate\Http\Request;
 
@@ -22,9 +23,9 @@ class PublicController extends Controller
         $pasar_id = request()->get('pasar_id') ? request()->get('pasar_id') : null;
         $detail_pasar = '';
 
-        if ($pasar_id == null){
+        if ($pasar_id == null) {
             $data = Pasar::with('gambar_pasar')->paginate(15);
-        }else{
+        } else {
             $data = Pasar::where('id', $pasar_id)->with('gambar_pasar')->paginate(15);
             $detail_pasar = Pasar::where('id', $pasar_id)->first();
         }
@@ -47,9 +48,9 @@ class PublicController extends Controller
         $detail_pasar = '';
 
         $show = false;
-        if ($pasar_id == null){
+        if ($pasar_id == null) {
             $data = [];
-        }else{
+        } else {
             $show = true;
             $data = Komoditi::where('pasar_id', $pasar_id)->orderBy('tgl', 'desc')->first();
             $detail_pasar = Pasar::where('id', $pasar_id)->first();
@@ -66,9 +67,9 @@ class PublicController extends Controller
         $pasar_id = request()->get('pasar_id') ? request()->get('pasar_id') : null;
         $detail_pasar = '';
 
-        if ($pasar_id == null){
-            $data = Rapat::orderBy('updated_at','desc')->with('pasar')->paginate(50);
-        }else{
+        if ($pasar_id == null) {
+            $data = Rapat::orderBy('updated_at', 'desc')->with('pasar')->paginate(50);
+        } else {
             $data = Rapat::where('pasar_id', $pasar_id)->orderBy('updated_at', 'desc')->with('pasar')->paginate(50);
             $detail_pasar = Pasar::where('id', $pasar_id)->first();
         }
@@ -84,9 +85,9 @@ class PublicController extends Controller
         $pasar_id = request()->get('pasar_id') ? request()->get('pasar_id') : null;
         $detail_pasar = '';
 
-        if ($pasar_id == null){
-            $data = Saran::orderBy('created_at','desc')->with('pasar')->paginate(50);
-        }else{
+        if ($pasar_id == null) {
+            $data = Saran::orderBy('created_at', 'desc')->with('pasar')->paginate(50);
+        } else {
             $data = Saran::where('pasar_id', $pasar_id)->orderBy('created_at', 'desc')->with('pasar')->paginate(50);
             $detail_pasar = Pasar::where('id', $pasar_id)->first();
         }
@@ -102,6 +103,43 @@ class PublicController extends Controller
         return view('public.ikm-ukm.index')
             ->with('ikm', Ikm::all())
             ->with('ukm', Ukm::all());
+    }
+
+    public function dev()
+    {
+        $data = Pasar::all();
+        $total = 0;
+        foreach ($data as $i) {
+            if (count($i->survei) == 0) {
+                $data = array(
+                    'kantor_pasar' => 'Ada',
+                    'toilet' => 'Ada',
+                    'struktur' => 'Ada',
+                    'nama_kp' => '-', //kepala pasar
+                    'hp_kp' => '', //kepala pasar
+                    'juru_pungut' => 0, //jml juru pungut
+                    'insentif_jp' => 0, //insentif juru pungut
+                    'kebersihan' => 0,
+                    'keamanan' => 0,
+                    'setor_kios' => 0,
+                    'setor_ruko' => 0,
+                    'pendapatan_lain' => 0,
+                    'jum_kios' => 0,
+                    'jum_ruko' => 0,
+                    'potensi_pad_awal' => 0,
+                    'potensi_pad' => 0, //potensi pendapatan pasar
+                    'pad_tertagih' => 0,
+                    'selisih_pad' => 0,
+                    'los_pasar' => 0,
+                    'anggaran' => 0,
+                    'pengelolaan' => '',
+                    'pasar_id' => $i->id,
+                );
+                Survei::create($data);
+                $total += 1;
+            }
+        }
+        return $total;
     }
 
 }

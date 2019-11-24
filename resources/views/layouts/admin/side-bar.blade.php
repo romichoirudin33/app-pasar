@@ -27,7 +27,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
                 @php
-                    Request::segment(2) === 'pasar' || Request::segment(2) === 'komoditi' || Request::segment(2) === 'gambar-pasar' ? $pasar = true : $pasar = false
+                    Request::segment(2) === 'pasar' || Request::segment(2) === 'komoditi' || Request::segment(2) === 'gambar-pasar' || Request::segment(2) === 'bakulan' ? $pasar = true : $pasar = false
                 @endphp
                 <li class="nav-item has-treeview {{ $pasar ? 'menu-open' : '' }} ">
                     <a href="#" class="nav-link">
@@ -47,7 +47,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">
+                            <a href="{{ route('admin.bakulan.index')  }}" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
                                     Data Padagang

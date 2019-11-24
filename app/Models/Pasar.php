@@ -39,4 +39,9 @@ class Pasar extends Model
     {
         return $this->hasMany(GambarPasar::class, 'pasar_id');
     }
+
+    public function bakulan()
+    {
+        return $this->hasMany(GambarPasar::class, 'pasar_id');
+    }
 }

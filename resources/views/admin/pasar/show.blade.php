@@ -37,149 +37,155 @@
                     </div>
                 </div>
             </div>
+
             <div class="card">
                 <form role="form" id="form">
                     <div class="card-body">
-                        <div class="row">
-                            <!-- Data Pasar -->
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label>Nama Pasar</label>
-                                    <input type="text" class="form-control" value="{{ $data->nama }}">
-                                </div>
-                                <div class="form-group">
-                                    <label>Desa</label>
-                                    <input type="text" class="form-control" value="{{ $data->desa }}">
-                                </div>
-                                <div class="form-group">
-                                    <label>Kecamatan</label>
-                                    <input type="text" class="form-control" value="{{ $data->kec }}">
-                                </div>
-                                <div class="form-group">
-                                    <label>Tahun Pembangunan</label>
-                                    <input type="text" class="form-control" value="{{ $data->pemb }}">
-                                </div>
-                                <div class="form-group">
-                                    <label>Lintang Selatan / Latitude</label>
-                                    <input type="text" class="form-control" value="{{ $data->ls }}">
-                                </div>
-                                <div class="form-group">
-                                    <label>Bujur Timur / Longitude</label>
-                                    <input type="text" class="form-control" value="{{ $data->bt }}">
-                                </div>
-                                <div class="form-group">
-                                    <label>Kondisi</label>
-                                    <input type="text" class="form-control" value="{{ $data->kondisi }}">
-                                </div>
-                                <div class="form-group">
-                                    <label>Luas (m<sup>2</sup>)</label>
-                                    <input type="text" class="form-control" value="{{ $data->luas }}">
-                                </div>
-
-                                <div class="form-group">
-                                    <label>Buka</label>
-                                    <input type="text" class="form-control" value="{{ $data->buka }}">
-                                </div>
-                                <div class="form-group">
-                                    <label>Unit Bagian</label>
-                                    <input type="text" class="form-control" value="{{ $data->unit }}">
-                                </div>
-                                <div class="form-group">
-                                    <label>Keterangan UPT</label>
-                                    <input type="text" class="form-control" value="{{ $data->upt }}">
-                                </div>
-                            </div>
-                            <!-- Data Survei Pasar -->
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label>Pengelola Pasar</label>
-                                    <input type="text" class="form-control" value="{{ $data->pengelola }}">
-                                </div>
-                                <div class="form-group">
-                                    <label>Kantor Pasar</label>
-                                    <input type="text" class="form-control" value="{{ $data->survei->kantor_pasar }}">
-                                </div>
-                                <div class="form-group">
-                                    <label>Toiler</label>
-                                    <input type="text" class="form-control" value="{{ $data->survei->toilet }}">
-                                </div>
-                                <div class="form-group">
-                                    <label>Struktur Organisasi</label>
-                                    <input type="text" class="form-control" value="{{ $data->survei->struktur }}">
-                                </div>
-                                <div class="form-group">
-                                    <label>Nama Kepala Pasar</label>
-                                    <input type="text" class="form-control" value="{{ $data->survei->nama_kp }}">
-                                </div>
-                                <div class="form-group">
-                                    <label>No HP Kepala Pasar</label>
-                                    <input type="text" class="form-control" value="{{ $data->survei->hp_kp }}">
-                                </div>
-                                <div class="form-group">
-                                    <label>Jumlah Juru Pungut</label>
-                                    <input type="text" class="form-control" value="{{ $data->survei->juru_pungut }}">
-                                </div>
-                                <div class="form-group">
-                                    <label>Insentif Juru Pungut</label>
-                                    <input type="text" class="form-control" value="{{ $data->survei->insentif_jp }}">
-                                </div>
-                                <div class="form-group">
-                                    <label>Jumlah Anggaran (Rp.)</label>
-                                    <input type="text" class="form-control" value="{{ $data->survei->anggaran }}">
-                                </div>
-                                <div class="form-group">
-                                    <label>Pengelolaan</label>
-                                    <input type="text" class="form-control" value="{{ $data->survei->pengelolaan }}">
-                                </div>
-                            </div>
-                            <!-- Jumlah Setoran -->
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label>Jumlah Petugas Kebersihan</label>
-                                    <input type="text" class="form-control" value="{{ $data->survei->kebersihan }}">
-                                </div>
-                                <div class="form-group">
-                                    <label>Jumlah Petugas Keamanan</label>
-                                    <input type="text" class="form-control" value="{{ $data->survei->keamanan }}">
-                                </div>
-                                <div class="form-group">
-                                    <label>Jumlah Setoran Bakulan (Rp.)</label>
-                                    <input type="text" class="form-control" value="{{ $data->survei->setor_bakulan }}">
-                                </div>
-                                <div class="form-group">
-                                    <label>Jumlah Bakulan Di Pasar</label>
-                                    <input type="text" class="form-control" value="{{ $data->survei->jum_bakulan }}">
-                                </div>
-                                <div class="form-group">
-                                    <label>Jumlah Setoran Kios (Rp.)/Bulan</label>
-                                    <input type="text" class="form-control" value="{{ $data->survei->setor_kios }}">
-                                </div>
-                                <div class="form-group">
-                                    <label>Jumlah Kios Di Pasar</label>
-                                    <input type="text" class="form-control" value="{{ $data->survei->jum_kios }}">
-                                </div>
-                                <div class="form-group">
-                                    <label>Jumlah Setoran Ruko (Rp.)/Bulan</label>
-                                    <input type="text" class="form-control" value="{{ $data->survei->setor_ruko }}">
-                                </div>
-                                <div class="form-group">
-                                    <label>Jumlah Ruko Di Pasar</label>
-                                    <input type="text" class="form-control" value="{{ $data->survei->jum_ruko }}">
-                                </div>
-                                <div class="form-group">
-                                    <label>Jumlah Pendapatan Lain-lain (Rp.)</label>
-                                    <input type="text" class="form-control" value="{{ $data->survei->pendapatan_lain }}">
-                                </div>
-                                <div class="form-group">
-                                    <label>Jumlah Los Pasar</label>
-                                    <input type="text" class="form-control" value="{{ $data->survei->los_pasar }}">
-                                </div>
-                                <div class="form-group">
-                                    <label>Potensi PAD</label>
-                                    <input type="text" class="form-control" value="{{ $data->survei->potensi_pad }}">
-                                </div>
-                            </div>
-                        </div>
+                        <table class="table table-bordered table-sm">
+                            <tr>
+                                <th width="40%">Nama Pasar</th>
+                                <td width="5px">:</td>
+                                <td>{{ $data->nama }}</td>
+                            </tr>
+                            <tr>
+                                <th>Desa</th>
+                                <td width="5px">:</td>
+                                <td>{{ $data->desa }}</td>
+                            </tr>
+                            <tr>
+                                <th>Kecamatan</th>
+                                <td width="5px">:</td>
+                                <td>{{ $data->kec }}</td>
+                            </tr>
+                            <tr>
+                                <th>Luas Bangunan Pasar (m<sup>2</sup>)</th>
+                                <td width="5px">:</td>
+                                <td>{{ $data->luas }}</td>
+                            </tr>
+                            <tr>
+                                <th>Luas Lahan Pasar (m<sup>2</sup>)</th>
+                                <td width="5px">:</td>
+                                <td>{{ $data->lahan }}</td>
+                            </tr>
+                            <tr>
+                                <th>Tahun Pembangunan</th>
+                                <td width="5px">:</td>
+                                <td>{{ $data->pemb }}</td>
+                            </tr>
+                            <tr>
+                                <th>Posisi Koordinat (Lintang Selatan / Bujur Timur)</th>
+                                <td width="5px">:</td>
+                                <td>{{ $data->ls }} / {{ $data->bt }}</td>
+                            </tr>
+                            <tr>
+                                <th>Kondisi</th>
+                                <td width="5px">:</td>
+                                <td>{{ $data->kondisi }}</td>
+                            </tr>
+                            <tr>
+                                <th>Keterangan Buka</th>
+                                <td width="5px">:</td>
+                                <td>{{ $data->buka }}</td>
+                            </tr>
+                            <tr>
+                                <th>Unit Bagian</th>
+                                <td width="5px">:</td>
+                                <td>{{ $data->unit }}</td>
+                            </tr>
+                            <tr>
+                                <th>Keterangan UPT</th>
+                                <td width="5px">:</td>
+                                <td>{{ $data->upt }}</td>
+                            </tr>
+                            <tr>
+                                <th>Pengelola Pasar</th>
+                                <td width="5px">:</td>
+                                <td>{{ $data->pengelola }}</td>
+                            </tr>
+                            <tr>
+                                <th>Perkiraan Jumlah Omset (Rp.)</th>
+                                <td width="5px">:</td>
+                                <td>{{ $data->omset }}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"></td>
+                            </tr>
+                            <tr>
+                                <th>Kantor Pasar</th>
+                                <td width="5px">:</td>
+                                <td>{{ $data->survei->kantor_pasar }}</td>
+                            </tr>
+                            <tr>
+                                <th>Toilet</th>
+                                <td width="5px">:</td>
+                                <td>{{ $data->survei->toilet }}</td>
+                            </tr>
+                            <tr>
+                                <th>Struktur Organisasi</th>
+                                <td width="5px">:</td>
+                                <td>{{ $data->survei->struktur }}</td>
+                            </tr>
+                            <tr>
+                                <th>Nama Kepala Pasar</th>
+                                <td width="5px">:</td>
+                                <td>{{ $data->survei->nama_kp }}</td>
+                            </tr>
+                            <tr>
+                                <th>No HP Kepala Pasar</th>
+                                <td width="5px">:</td>
+                                <td>{{ $data->survei->hp_kp }}</td>
+                            </tr>
+                            <tr>
+                                <th>Juru Pungut (Jumlah - Insentif)</th>
+                                <td width="5px">:</td>
+                                <td>{{ $data->survei->juru_pungut }} - Rp. {{ $data->survei->insentif_jp }}</td>
+                            </tr>
+                            <tr>
+                                <th>Jumlah Anggaran</th>
+                                <td width="5px">:</td>
+                                <td>{{ $data->survei->anggaran }}</td>
+                            </tr>
+                            <tr>
+                                <th>Pengelolaan</th>
+                                <td width="5px">:</td>
+                                <td>{{ $data->survei->pengelolaan }}</td>
+                            </tr>
+                            <tr>
+                                <th>Jumlah Petugas Kebersihan</th>
+                                <td width="5px">:</td>
+                                <td>{{ $data->survei->kebersihan }}</td>
+                            </tr>
+                            <tr>
+                                <th>Jumlah Petugas Keamanan</th>
+                                <td width="5px">:</td>
+                                <td>{{ $data->survei->keamanan }}</td>
+                            </tr>
+                            <tr>
+                                <th>Jumlah Los Pasar</th>
+                                <td width="5px">:</td>
+                                <td>{{ $data->survei->los_pasar }}</td>
+                            </tr>
+                            <tr>
+                                <th>Kios (Jumlah & Setoran)</th>
+                                <td width="5px">:</td>
+                                <td>{{ $data->survei->jum_kios }} - Rp. {{ $data->survei->setor_kios }}</td>
+                            </tr>
+                            <tr>
+                                <th>Ruko (Jumlah & Setoran)</th>
+                                <td width="5px">:</td>
+                                <td>{{ $data->survei->jum_ruko }} - Rp. {{ $data->survei->setor_ruko }}</td>
+                            </tr>
+                            <tr>
+                                <th>Jumlah Pendapatan Lain-lain (Rp.)</th>
+                                <td width="5px">:</td>
+                                <td>{{ $data->survei->pendapatan_lain }}</td>
+                            </tr>
+                            <tr>
+                                <th>Potensi PAD (Rp.)</th>
+                                <td width="5px">:</td>
+                                <td>{{ $data->survei->potensi_pad + $data->survei->potensi_pad_awal }}</td>
+                            </tr>
+                        </table>
                     </div>
                     <!-- /.card-body -->
                 </form>
