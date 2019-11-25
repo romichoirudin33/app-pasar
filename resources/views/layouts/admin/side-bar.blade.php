@@ -130,13 +130,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="" class="nav-link">
+                            <a href="{{ route('admin.laporan.grafik_pad') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Grafik PAD</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">
+                            <a href="{{ route('admin.laporan.lainnya') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Laporan lainnya</p>
                             </a>

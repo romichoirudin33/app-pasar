@@ -60,7 +60,8 @@
             <div class="card mb-4" style="height: 250px">
                 <div class="card-body text-center">
                     <img src="https://www.freeiconspng.com/uploads/stock-exchange-icon-png-1.png" style="height: 80px">
-                    <h5 class="card-title mt-3">PAD</h5>
+                    <h5 class="card-title"></h5>
+                    <a href="{{ route('grafik-pad') }}" class="btn btn-outline-dark stretched-link mt-3 mb-3">PAD</a>
                     <p class="card-text">Grafik Pendapatan Asli Daerah dari pasar.</p>
                 </div>
             </div>

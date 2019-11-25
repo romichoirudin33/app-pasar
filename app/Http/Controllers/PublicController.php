@@ -105,6 +105,13 @@ class PublicController extends Controller
             ->with('ukm', Ukm::all());
     }
 
+    public function grafik_pad()
+    {
+        $pasar = Pasar::all();
+        return view('public.grafik-pad.index')
+            ->with('pasar', $pasar);
+    }
+
     public function dev()
     {
         $data = Pasar::all();

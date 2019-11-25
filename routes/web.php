@@ -20,6 +20,7 @@ Route::group(['prefix' => '/'], function () {
     Route::get('rapat', 'PublicController@rapat')->name('rapat');
     Route::get('saran', 'PublicController@saran')->name('saran');
     Route::get('ikm-ukm', 'PublicController@ikmUkm')->name('ikm-ukm');
+    Route::get('grafik-pad', 'PublicController@grafik_pad')->name('grafik-pad');
 });
 
 Auth::routes();
@@ -42,6 +43,12 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('saran', 'Admin\SaranController', ['as' => 'admin']);
 
         Route::resource('users', 'Admin\UsersController', ['as' => 'admin']);
+
+        Route::group(['prefix' => 'laporan'], function () {
+            Route::get('grafik_pad', 'Admin\LaporanController@grafik_pad')->name('admin.laporan.grafik_pad');
+            Route::get('lainnya', 'Admin\LaporanController@lainnya')->name('admin.laporan.lainnya');
+            Route::get('download', 'Admin\LaporanController@download')->name('admin.laporan.download');
+        });
     });
 });
 

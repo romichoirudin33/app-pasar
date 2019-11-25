@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{{ asset('css/plugins/datatables-bs4/css/dataTables.bootstrap4.css') }}">
 @endsection
 
-@section('title', 'Sampah (Saran dan Permasalahan)')
+@section('title', 'Setor Bakulan')
 
 @section('content')
     <div class="row">

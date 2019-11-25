@@ -4,7 +4,7 @@
     <link href="{{ asset('css/plugins/validetta/validetta.css') }}" rel="stylesheet" type="text/css" media="screen">
 @endsection
 
-@section('title', 'Tambah Saran')
+@section('title', 'Setor Bakulan')
 
 @section('content')
     <div class="row">
