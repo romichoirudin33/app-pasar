@@ -14,6 +14,9 @@
                 <div class="card-body">
                     <div class="card-text">
                         <b>Total Record {{ count($data) }}</b>
+                        <a href="{{ asset('img/syarat-penempatan-kios.pdf') }}" class="btn btn-info btn-xs" target="_blank">
+                            <span class="fas fa-download"></span> Syarat Penempatan Kios
+                        </a>
                         <div class="float-right">
                             <a href="{{ route('admin.pasar.create') }}" class="btn btn-outline-primary btn-xs">
                                 <span class="fas fa-plus"></span> Tambah
