@@ -2,9 +2,15 @@
 
 @section('content')
     <div class="text-center">
-        <h3 class="text-bold mb-5">
+        <h3 class="text-bold mb-2">
             Pasar - Pasar di Kabupaten Bima
         </h3>
+    </div>
+
+    <div class="text-right mb-5">
+        <a href="{{ asset('img/syarat-penempatan-kios.pdf') }}" class="btn btn-info btn-xs" target="_blank">
+            <span class="fas fa-download"></span> Syarat Penempatan Kios
+        </a>
     </div>
 
     @foreach($data as $i)
