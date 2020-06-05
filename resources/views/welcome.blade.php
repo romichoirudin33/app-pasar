@@ -45,18 +45,13 @@
             <img src="{{ asset('assets-img/phone_PNG49047.png') }}" style="height: 50px">
             Call Pedagang
         </button>
-        <br>
+        <br><br>
 
-        <button class="btn btn-outline-dark mb-2" data-toggle="modal" data-target="#exampleModal">
-            <img src="{{ asset('assets-img/phone_PNG49047.png') }}" style="height: 50px">
+        <button class="btn btn-outline-dark mb-2" data-toggle="modal" data-target="#exampleModal1">
+            <img src="{{ asset('assets-img/icon-pengelola.png') }}" style="height: 50px">
             Call Pengelola
         </button>
 
-        <div id="myModal" class="modal" style="display: none;">
-            <span class="close">×</span>
-            <img class="modal-content" id="img01" src="https://www.w3schools.com/howto/img_snow.jpg">
-            <div id="caption">Snow</div>
-        </div>
         <div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
@@ -89,6 +84,21 @@
                         </div>
                     </div>
 
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade " id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="{{ asset('assets-img/IKLAN-BAPEDA-PASAR.jpg') }}" alt="">
+                    </div>
                 </div>
             </div>
         </div>
