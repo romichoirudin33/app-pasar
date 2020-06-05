@@ -16,7 +16,8 @@
             border-radius: 0;
             height: 400px;
             background-size: cover;
-            background-image: url('https://scontent-frx5-1.cdninstagram.com/vp/916a23df54eb551521a72a30f7711842/5E4CD5FA/t51.2885-15/e35/69081181_750246332073108_960838464931487512_n.jpg?_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=100&se=7&ig_cache_key=MjEyMDkxMDMxMDQzNzAwMTgyNQ%3D%3D.2');
+            background-position:50% 70%;
+            background-image: url('{{asset('assets-img/background-jumbotron.jpg')}}');
         }
 
         .link-app:hover{
@@ -55,7 +56,7 @@
 </div>
 
 <div class="container">
-    <div class="row bg-white shadow p-5" style="margin-top: -100px; margin-bottom: 100px">
+    <div class="row bg-white shadow pl-5 pr-5" style="margin-top: -100px; margin-bottom: 100px">
         <div class="col md-12">
             @yield('content')
         </div>
