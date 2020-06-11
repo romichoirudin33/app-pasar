@@ -57,8 +57,11 @@
 
 <div class="container">
     <div class="row bg-white shadow pl-5 pr-5" style="margin-top: -100px; margin-bottom: 100px">
-        <div class="col md-12">
+        <div class="col md-12 ">
+            @yield('sliders')
+            <div class="mt-5 mb-5">
             @yield('content')
+            </div>
         </div>
     </div>
 </div>

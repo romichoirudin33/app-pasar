@@ -12,7 +12,7 @@
     </style>
 @endsection
 
-@section('content')
+@section('sliders')
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel"
          style="margin-left: -4rem; margin-right: -4rem; margin-bottom: 4rem">
         <div class="carousel-inner">
@@ -28,6 +28,10 @@
                 <img class="d-block w-100" src="{{ asset('assets-img/DENAH-EDIT.jpg') }}"
                      alt="Third slide">
             </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="{{ asset('assets-img/IKLAN-BAPEDA-KAB-J.jpg') }}"
+                     alt="Fourth slide">
+            </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -38,7 +42,9 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+@endsection
 
+@section('content')
     <div class="text-center mt-3">
 
         <button class="btn btn-outline-dark mb-2" data-toggle="modal" data-target="#exampleModal">
@@ -83,7 +89,6 @@
                             </a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -97,7 +102,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <img src="{{ asset('assets-img/IKLAN-BAPEDA-PASAR.jpg') }}" alt="">
+                        <img src="{{ asset('assets-img/IKLAN-BAPEDA-PASAR.jpg') }}" class="d-block w-100" alt="Iklan bapeda pasar">
                     </div>
                 </div>
             </div>
@@ -116,7 +121,7 @@
                     <img src="https://www.jing.fm/clipimg/full/143-1430726_fruits-pasartap-add-to-market-icon-png.png"
                          style="height: 80px">
                     <h5 class="card-title"></h5>
-                    <a href="" class="btn btn-outline-dark mt-3 mb-3">Pasar</a>
+                    <a href="{{ route('pasar') }}" class="btn btn-outline-dark mt-3 mb-3">Pasar</a>
                     <p class="card-text">Cek pasar sekitar bima.</p>
                 </div>
             </div>
